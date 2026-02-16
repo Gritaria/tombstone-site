@@ -351,6 +351,17 @@ h2 {
   color: var(--fg-3);
 }
 
+.section-updated {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.section-updated i {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .rule-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -494,5 +505,9 @@ h2 {
 
   .hero-content {
     margin-top: 40px;
+  }
+
+  .section-updated {
+    text-align: left;
   }
 }
