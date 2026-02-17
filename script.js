@@ -1,21 +1,29 @@
-const revealables = document.querySelectorAll(".section, .card, .rule, .panel, .contact-card");
+document.documentElement.classList.add("js");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("reveal");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+const revealables = document.querySelectorAll(".card, .rule, .panel, .contact-card");
 
-revealables.forEach((el, index) => {
-  el.style.setProperty("--reveal-delay", `${index * 60}ms`);
-  observer.observe(el);
-});
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealables.forEach((el, index) => {
+    el.style.setProperty("--reveal-delay", `${index * 60}ms`);
+    observer.observe(el);
+  });
+} else {
+  revealables.forEach((el) => {
+    el.classList.add("reveal");
+  });
+}
 
 const backgrounds = [
   "assets/background/background (1).jpeg",

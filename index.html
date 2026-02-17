@@ -4,10 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tombstone RP - Red Dead RP</title>
-  <meta name="description" content="Tombstone RP - servidor Red Dead RP. Informações, regras e como entrar." />
+  <title>Tombstone RP | Servidor Red Dead RP Brasil</title>
+  <meta name="description"
+    content="Servidor brasileiro de Red Dead RP com foco em roleplay sério, economia viva, eventos da comunidade e experiência imersiva no Velho Oeste." />
+  <meta name="theme-color" content="#0a0a0a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/1.png" />
+  <link rel="preload" as="image" href="assets/3.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Space+Grotesk:wght@400;600&display=swap"
     rel="stylesheet" />
@@ -18,17 +22,18 @@
   <div class="bg-layer bg-a" aria-hidden="true"></div>
   <div class="bg-layer bg-b" aria-hidden="true"></div>
   <header class="hero">
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegação principal">
       <div class="logo">
         <a href="index.html">
-          <img src="assets/3.png" alt="Tombstone Roleplay" />
+          <img src="assets/3.png" alt="Tombstone Roleplay" fetchpriority="high" decoding="async" />
         </a>
       </div>
       <div class="nav-links">
         <a href="#sobre">Sobre</a>
         <a href="regras.html">Regras</a>
         <a href="empresas.html">Empresas</a>
-        <a href="#como-entrar">Como entrar</a>
+        <a href="dicas.html">Dicas</a>
+        <a href="#como-entrar">Como Entrar</a>
         <a href="#contato">Contato</a>
         <a href="#utilidades">Utilidades</a>
         <a href="#doacoes">Doações</a>
@@ -36,13 +41,13 @@
     </nav>
     <div class="hero-content">
       <div class="hero-badge">
-        <img src="assets/1.png" alt="Tombstone Roleplay" />
+        <img src="assets/1.png" alt="Tombstone Roleplay" fetchpriority="high" decoding="async" />
       </div>
       <p class="eyebrow">Red Dead Redemption 2 - Roleplay</p>
-      <h1>Viva sua história no Velho Oeste</h1>
+      <h1>Crie e viva dia a dia sua história</h1>
       <p class="lead">
         Um mundo imersivo onde cada escolha define seu destino.
-        Seja um fora da lei, um homem da lei, ou um empresário de sucesso.
+        Seja um agente da lei, um criminoso, um fazendeiro, um empresário de sucesso ou um nativo.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#como-entrar">Quero jogar</a>
@@ -58,7 +63,7 @@
         <p>
           O Tombstone RP é um servidor brasileiro de Red Dead RP focado em
           realismo, interação e consequências. Criamos eventos sazonais,
-          missões da comunidade e espaços dedicados a facções e negócios.
+          missões da comunidade e espaços dedicados a negócios e criação de histórias.
         </p>
         <div class="cards">
           <article class="card">
@@ -72,27 +77,20 @@
             <h3>RP sério</h3>
             <p>
               Valorizamos coerência, história pessoal e respeito. Sem
-              metas, sem caos gratuito.
+              "PvP" como um objetivo principal, tiroteios e mortes são consequência de suas ações.
             </p>
           </article>
           <article class="card">
             <h3>Eventos</h3>
             <p>
-              Eventos oficiais e da comunidade para movimentar a cidade e
+              Eventos oficiais e da comunidade para movimentar a comunidade e
               criar novos conflitos e alianças.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Conflito com sentido</h3>
-            <p>
-              PvP é consequência, não o foco.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- NEW SECTION: Choose Your Path -->
     <section class="section alt">
       <div class="section-inner">
         <h2>Escolha seu Caminho</h2>
@@ -123,7 +121,6 @@
       </div>
     </section>
 
-    <!-- LORE SECTION PLACEHOLDER -->
     <section class="section">
       <div class="section-inner">
         <div class="split">
@@ -136,9 +133,9 @@
             <p>Você será aquele que se adapta a este novo mundo, ou lutará contra ele até o fim?</p>
           </div>
           <div>
-            <!-- Image placeholder or decorative element -->
             <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 8px; text-align: center;">
-              <img src="assets/1.png" style="opacity: 0.5; max-width: 150px;">
+              <img src="assets/1.png" alt="Emblema Tombstone RP" style="opacity: 0.5; max-width: 150px;" loading="lazy"
+                decoding="async">
             </div>
           </div>
         </div>
@@ -148,7 +145,7 @@
     <section id="como-entrar" class="section">
       <div class="section-inner split">
         <div>
-          <h2>Como entrar</h2>
+          <h2>Como Entrar</h2>
           <ol class="steps">
             <li>Entre no nosso Discord.</li>
             <li>Leia as regras e aceite o termo de comunidade.</li>
@@ -156,8 +153,9 @@
             <li>Aguarde a aprovação e receba o acesso.</li>
           </ol>
           <div class="hero-actions">
-            <a class="btn primary" href="#contato">Discord</a>
-            <a class="btn ghost" href="#regras">Regras</a>
+            <a class="btn primary" href="https://discord.gg/P8V5ubveza" target="_blank"
+              rel="noopener noreferrer">Discord</a>
+            <a class="btn ghost" href="regras.html">Regras</a>
           </div>
         </div>
         <div class="panel">
@@ -184,12 +182,12 @@
           <article class="card">
             <h3>Wiki</h3>
             <p>Guia completo sobre sistemas, crafting e comandos.</p>
-            <a href="#" class="btn small">Ler Wiki</a>
+            <a href="#" class="btn small">Ler wiki</a>
           </article>
           <article class="card">
             <h3>Status</h3>
             <p>Verifique o status do servidor e número de jogadores online.</p>
-            <a href="#" class="btn small">Ver Status</a>
+            <a href="#" class="btn small">Ver status</a>
           </article>
         </div>
       </div>
@@ -200,23 +198,27 @@
         <h2>Apoie o Servidor</h2>
         <p>
           O Tombstone RP é mantido pela comunidade.
-          Suas doações ajudam a pagar os custos de hospedagem e desenvolvimento.
+          Sua contribuição ajuda na manutenção do servidor e como agradecimento, você receberá benefícios dentro do
+          jogo.
         </p>
         <div class="cards">
           <article class="card">
             <h3>VIP Bronze</h3>
             <p>Benefícios cosméticos e prioridade na fila.</p>
-            <a href="#" class="btn small">Ver pacote</a>
+            <a href="https://tombstonerp.centralcart.com.br/" class="btn small" target="_blank"
+              rel="noopener noreferrer">Ver pacote</a>
           </article>
           <article class="card">
             <h3>VIP Prata</h3>
             <p>Acesso antecipado a novidades e mais slots de personagem.</p>
-            <a href="#" class="btn small">Ver pacote</a>
+            <a href="https://tombstonerp.centralcart.com.br/" class="btn small" target="_blank"
+              rel="noopener noreferrer">Ver pacote</a>
           </article>
           <article class="card">
             <h3>VIP Ouro</h3>
             <p>O pacote definitivo para quem quer apoiar o projeto ao máximo.</p>
-            <a href="#" class="btn small">Ver pacote</a>
+            <a href="https://tombstonerp.centralcart.com.br/" class="btn small" target="_blank"
+              rel="noopener noreferrer">Ver pacote</a>
           </article>
         </div>
       </div>
@@ -229,7 +231,7 @@
           <div class="contact-card">
             <h3>Discord</h3>
             <p>Link oficial do servidor e suporte.</p>
-            <a class="btn small" href="https://discord.gg/SEU_LINK">
+            <a class="btn small" href="https://discord.gg/P8V5ubveza" target="_blank" rel="noopener noreferrer">
               Entrar
             </a>
           </div>
