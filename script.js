@@ -37,7 +37,6 @@ const backgrounds = [
   "assets/background/background (9).jpeg",
   "assets/background/background (10).jpeg",
   "assets/background/background (11).jpeg",
-  "assets/background/background (12).jpeg",
   "assets/background/background (13).jpeg",
   "assets/background/background (14).jpeg",
   "assets/background/background (15).jpeg",

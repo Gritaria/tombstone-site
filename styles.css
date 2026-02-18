@@ -287,6 +287,58 @@ main {
   gap: 32px;
 }
 
+#sobre .section-inner {
+  gap: 24px;
+}
+
+#sobre .about-head {
+  display: grid;
+  gap: 8px;
+  max-width: 760px;
+}
+
+#sobre .about-head .eyebrow {
+  letter-spacing: 0.22em;
+}
+
+#sobre .about-head h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+#sobre .about-story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#sobre .about-block {
+  margin: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background: linear-gradient(140deg, rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.5));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#sobre .about-block h3 {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--fg-1);
+}
+
+#sobre .about-block p {
+  margin: 0;
+  color: var(--fg-2);
+  line-height: 1.68;
+}
+
+#sobre .cards {
+  margin-top: 2px;
+}
+
 .rules-head {
   display: flex;
   align-items: center;
@@ -633,6 +685,15 @@ summary:focus-visible {
 
   .section-updated {
     text-align: left;
+  }
+
+  #sobre .about-story {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #sobre .about-block {
+    padding: 16px;
   }
 }
 
