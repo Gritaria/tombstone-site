@@ -152,3 +152,47 @@ if (imageModal && imageModalEl && imageModalTriggers.length > 0) {
     }
   });
 }
+
+const textModal = document.querySelector("[data-text-modal]");
+const textModalTriggers = document.querySelectorAll("[data-text-modal-trigger]");
+
+if (textModal && textModalTriggers.length > 0) {
+  let lastTextModalTrigger = null;
+
+  const openTextModal = (trigger) => {
+    textModal.classList.add("is-open");
+    textModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    lastTextModalTrigger = trigger;
+  };
+
+  const closeTextModal = () => {
+    textModal.classList.remove("is-open");
+    textModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    if (lastTextModalTrigger) {
+      lastTextModalTrigger.focus();
+      lastTextModalTrigger = null;
+    }
+  };
+
+  textModalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openTextModal(trigger);
+    });
+  });
+
+  const textModalCloseEls = textModal.querySelectorAll("[data-text-modal-close]");
+
+  textModalCloseEls.forEach((el) => {
+    el.addEventListener("click", closeTextModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && textModal.classList.contains("is-open")) {
+      closeTextModal();
+    }
+  });
+}
