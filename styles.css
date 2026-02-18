@@ -623,6 +623,86 @@ summary:focus-visible {
   flex-wrap: wrap;
 }
 
+.inline-link {
+  color: var(--fg-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inline-link:hover {
+  color: var(--fg-0);
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.image-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.image-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+.image-modal__content {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 96vw);
+  max-height: 92vh;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #070707;
+  box-shadow: var(--shadow);
+}
+
+.image-modal__img {
+  display: block;
+  width: 100%;
+  max-height: 92vh;
+  object-fit: contain;
+  background: #000;
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--fg-1);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.image-modal__close:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 @media (max-width: 720px) {
   .hero {
     padding: 28px 6vw 88px;
@@ -694,6 +774,16 @@ summary:focus-visible {
 
   #sobre .about-block {
     padding: 16px;
+  }
+
+  .image-modal {
+    padding: 14px;
+  }
+
+  .image-modal__close {
+    top: 8px;
+    right: 8px;
+    padding: 7px 10px;
   }
 }
 

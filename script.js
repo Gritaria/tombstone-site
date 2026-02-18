@@ -94,3 +94,61 @@ if (bgLayers.length >= 2 && backgrounds.length > 0) {
     currentLayer = 1 - currentLayer;
   }, 30000);
 }
+
+const imageModal = document.querySelector("[data-image-modal]");
+const imageModalEl = document.querySelector("[data-image-modal-img]");
+const imageModalTriggers = document.querySelectorAll("[data-image-modal-trigger]");
+
+if (imageModal && imageModalEl && imageModalTriggers.length > 0) {
+  let lastModalTrigger = null;
+
+  const openImageModal = (trigger) => {
+    const imageSrc = trigger.getAttribute("href");
+    if (!imageSrc) {
+      return;
+    }
+
+    imageModalEl.src = imageSrc;
+    imageModalEl.alt =
+      trigger.getAttribute("data-image-modal-alt") || "Imagem de exemplo";
+
+    imageModal.classList.add("is-open");
+    imageModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    lastModalTrigger = trigger;
+  };
+
+  const closeImageModal = () => {
+    imageModal.classList.remove("is-open");
+    imageModal.setAttribute("aria-hidden", "true");
+    imageModalEl.removeAttribute("src");
+    imageModalEl.alt = "";
+    document.body.classList.remove("modal-open");
+
+    if (lastModalTrigger) {
+      lastModalTrigger.focus();
+      lastModalTrigger = null;
+    }
+  };
+
+  imageModalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openImageModal(trigger);
+    });
+  });
+
+  const imageModalCloseEls = imageModal.querySelectorAll(
+    "[data-image-modal-close]"
+  );
+
+  imageModalCloseEls.forEach((el) => {
+    el.addEventListener("click", closeImageModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && imageModal.classList.contains("is-open")) {
+      closeImageModal();
+    }
+  });
+}
